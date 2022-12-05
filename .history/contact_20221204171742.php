@@ -1,0 +1,165 @@
+<?php
+
+if(isset($_POST["submit"])) {
+
+    $username =  $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $phone= $_POST['phone'];
+    $message = $_POST['message'];
+
+    $to = $email;
+    $subject = $message;
+
+    $message = "Phone: ($phone)" . $message;
+
+    //Always set content-type when sending HTML email
+
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers = "Content-type: text/html;charset=UTF-8" . "\r\n";
+
+    //More headers
+
+    $headers = "From: soipanjenkins@gmail.com" . "\r\n";
+    $mail = mail($to,$subject,$message,$headers);
+
+  if ($mail) {
+    echo "<script>alert('Mail Sent.');</script>";
+  }else{
+    echo "<script>alert('Mail Not Sent.');</script>";
+  }
+ 
+}
+
+?>
+
+<!DOCTYPE html>
+    <html lang="en">
+
+        <head>
+
+            <title> Admin </title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://kit.fontawesome.com/a382b82c21.js" crossorigin="anonymous"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        
+            <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+body{
+    background: linear-gradient(#0e)
+}
+/*.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(photos/contact-us-lettering.jpg);
+    background-size: cover;
+    background-position: center;
+}.navbar img{
+    width: 100px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 20%;
+
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content:
+    space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #960032;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    
+}
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.social-icons{
+    margin-left: 300px auto;
+    text-align: left;
+}
+
+.social-icons img{
+    width: 30px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+    display:flex;
+    flex-direction:column;
+    
+
+}*/
+
+
+
+            </style>
+            
+        </head>
+
+            <body>
+
+            
+
+            <!--------- <div class="banner">
+                <div class="navbar">
+
+                    <img src="photos/logo.png" class="logo">
+                    <ul>
+                        <li><a href="home.php">Home</a></li>\
+
+                        </ul>                    
+                </div>
+            </div> ------->
+
+            <div class="contactUs">
+                <div class="title">
+                    <h2>Get in Touch</h2>
+                </div>
+            </div>
+        </body>
+
+
+    
+
+</html>
